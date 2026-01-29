@@ -110,19 +110,16 @@ footer {
   margin-top: 60px;
 }
 
-/* 通常時 */
 .pagination .page-link {
   color: #212529;
   border: 1px solid #dee2e6;
 }
 
-/* ホバー時 */
 .pagination .page-link:hover {
   background-color: #f1f3f5;
   color: #212529;
 }
 
-/* activeページ */
 .pagination .page-item.active .page-link {
   background-color: #212529;
   border-color: #212529;
@@ -172,4 +169,24 @@ footer {
   overflow: hidden;
   text-overflow: ellipsis;
   min-height: 3.9em;
+}
+
+/* カルーセルの高さと背景の調整 */
+.hero-content-wrapper {
+    height: 500px; 
+    background-size: cover !important;
+    background-position: center !important;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+
+/* モバイル対応（レスポンシブ） */
+@media (max-width: 768px) {
+    .hero-content-wrapper {
+        height: 400px; 
+    }
+    .hero-content-wrapper h1 {
+        font-size: 1.8rem;
+    }
 }
