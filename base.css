@@ -190,3 +190,46 @@ footer {
         font-size: 1.8rem;
     }
 }
+
+
+/* カードのオーバーレイ設定 */
+.anime-card-overlay {
+    position: relative;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    aspect-ratio: 2 / 3; /* ポスターのような縦横比に固定 */
+}
+
+.anime-card-overlay:hover {
+    transform: translateY(-8px);
+}
+
+.anime-card-overlay .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.anime-card-overlay .card-img-overlay {
+    /* 下から上に黒いグラデーションをかける */
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.25rem;
+    color: white;
+}
+
+.anime-card-overlay .card-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* ホバーした時だけ詳しい情報を出す演出（お好みで） */
+.anime-card-overlay .overlay-details {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
