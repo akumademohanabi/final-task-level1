@@ -96,162 +96,60 @@
 
     <div class="container">
         <div class="row">
-
             <!-- フィルターサイドバー -->
             <div class="col-lg-3">
-                <div class="filter-card">
-                    <h5 class="fw-bold mb-3"><i class="bi bi-funnel-fill"></i> 絞り込み</h5>
-
-                    <form>
-                        <!-- ジャンル -->
-                        <div class="filter-section">
-                            <h6 class="fw-bold mb-3">ジャンル</h6>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="genre1">
-                                <label class="form-check-label" for="genre1">
-                                    ファンタジー <span class="badge bg-secondary">234</span>
-                                </label>
+                <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="filterOffcanvas" aria-labelledby="filterOffcanvasLabel">
+                    <div class="offcanvas-header border-bottom d-lg-none">
+                        <h5 class="offcanvas-title fw-bold" id="filterOffcanvasLabel">作品を絞り込む</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#filterOffcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="filter-card p-3 p-lg-0 w-100">
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">キーワード検索</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="作品名を入力...">
+                                    <button class="btn btn-primary" type="button"><i class="bi bi-search"></i></button>
+                                </div>
                             </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="genre2">
-                                <label class="form-check-label" for="genre2">
-                                    恋愛 <span class="badge bg-secondary">189</span>
-                                </label>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">ジャンル</label>
+                                <div class="filter-section">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="j1" checked>
+                                        <label class="form-check-label" for="j1">アクション</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="j2">
+                                        <label class="form-check-label" for="j2">ファンタジー</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" id="j3">
+                                        <label class="form-check-label" for="j3">学園</label>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="genre3">
-                                <label class="form-check-label" for="genre3">
-                                    アクション <span class="badge bg-secondary">312</span>
-                                </label>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">放送時期</label>
+                                <select class="form-select">
+                                    <option selected>すべて</option>
+                                    <option>2024年冬</option>
+                                    <option>2023年秋</option>
+                                    <option>2023年夏</option>
+                                </select>
                             </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="genre4">
-                                <label class="form-check-label" for="genre4">
-                                    SF <span class="badge bg-secondary">156</span>
-                                </label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="genre5">
-                                <label class="form-check-label" for="genre5">
-                                    コメディ <span class="badge bg-secondary">201</span>
-                                </label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="genre6">
-                                <label class="form-check-label" for="genre6">
-                                    ホラー <span class="badge bg-secondary">89</span>
-                                </label>
-                            </div>
+                            <button class="btn btn-primary w-100 py-2">条件を適用する</button>
                         </div>
-
-                        <!-- 放送時期 -->
-                        <div class="filter-section">
-                            <h6 class="fw-bold mb-3">放送時期</h6>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" name="season" id="season1">
-                                <label class="form-check-label" for="season1">
-                                    2024年秋
-                                </label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" name="season" id="season2">
-                                <label class="form-check-label" for="season2">
-                                    2024年夏
-                                </label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" name="season" id="season3">
-                                <label class="form-check-label" for="season3">
-                                    2024年春
-                                </label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" name="season" id="season4">
-                                <label class="form-check-label" for="season4">
-                                    2024年冬
-                                </label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="radio" name="season" id="season5">
-                                <label class="form-check-label" for="season5">
-                                    すべて
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- 放送状況 -->
-                        <div class="filter-section">
-                            <h6 class="fw-bold mb-3">放送状況</h6>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="status1">
-                                <label class="form-check-label" for="status1">
-                                    放送中 <span class="badge bg-success">78</span>
-                                </label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="status2">
-                                <label class="form-check-label" for="status2">
-                                    完結 <span class="badge bg-secondary">456</span>
-                                </label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="status3">
-                                <label class="form-check-label" for="status3">
-                                    放送予定 <span class="badge bg-info">23</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- 評価 -->
-                        <div class="filter-section">
-                            <h6 class="fw-bold mb-3">評価</h6>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="rating1">
-                                <label class="form-check-label" for="rating1">
-                                    <span class="rating-stars">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                    </span> 以上
-                                </label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="rating2">
-                                <label class="form-check-label" for="rating2">
-                                    <span class="rating-stars">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star"></i>
-                                    </span> 以上
-                                </label>
-                            </div>
-                            <div class="form-check mb-2">
-                                <input class="form-check-input" type="checkbox" id="rating3">
-                                <label class="form-check-label" for="rating3">
-                                    <span class="rating-stars">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star"></i>
-                                        <i class="bi bi-star"></i>
-                                    </span> 以上
-                                </label>
-                            </div>
-                        </div>
-
-                        <button type="reset" class="btn btn-outline-danger w-100 mb-2">
-                            <i class="bi bi-x-circle"></i> フィルターをクリア
-                        </button>
+                    </div>
                 </div>
             </div>
-            </form>
-
             <!-- 作品一覧 -->
             <div class="col-lg-9 mt-5 mt-lg-0">
+                <div class="d-lg-none mb-3">
+                    <button class="btn btn-outline-dark w-100 d-flex align-items-center justify-content-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas">
+                        <i class="bi bi-sliders"></i> 条件で絞り込む
+                    </button>
+                </div>
                 <!-- ツールバー -->
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <div id="cases" class="d-none d-sm-block">
@@ -516,23 +414,24 @@
                 </div>
 
                 <!-- ページネーション -->
-                <nav aria-label="ページネーション" id="pagination">
-                    <ul class="pagination justify-content-center">
+                <nav aria-label="Page navigation" class="mt-5 mb-5" id="pagination">
+                    <ul class="pagination justify-content-center flex-wrap">
                         <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">
-                                <i class="bi bi-chevron-left"></i> 前へ
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                                <span class="d-none d-sm-inline">前へ</span>
+                                <span class="d-inline d-sm-none"><i class="bi bi-chevron-left"></i></span>
                             </a>
                         </li>
                         <li class="page-item active"><a class="page-link" href="#">1</a></li>
                         <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
-                        <li class="page-item"><a class="page-link" href="#">26</a></li>
+                        <li class="page-item d-none d-sm-block"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item d-none d-sm-block"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link" href="#">10</a></li>
                         <li class="page-item">
-                            <a class="page-link" href="#">
-                                次へ <i class="bi bi-chevron-right"></i>
+                             <a class="page-link" href="#">
+                                <span class="d-none d-sm-inline">次へ</span>
+                                <span class="d-inline d-sm-none"><i class="bi bi-chevron-right"></i></span>
                             </a>
                         </li>
                     </ul>
